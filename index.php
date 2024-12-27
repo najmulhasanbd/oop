@@ -75,16 +75,52 @@
 // $check = new Son('Najmul', '20', 'dhaka');
 // echo $check->message();
 
+// class Person
+// {
+//     const NAME = "rahim mia";
 
-class Person
+//     function check()
+//     {
+//         return self::NAME;
+//     }
+// }
+
+// $test = new Person;
+// echo $test->check();
+
+
+interface Person
 {
-    const NAME = "rahim mia";
+    public function makeVideo();
+}
 
-    function check()
+class TV implements Person
+{
+    public function makeVideo()
     {
-        return self::NAME;
+        echo 'hi';
+    }
+}
+class gMusic implements Person
+{
+    public function makeVideo()
+    {
+        echo 'g music';
     }
 }
 
-$test = new Person;
-echo $test->check();
+class mMusic implements Person
+{
+    public function makeVideo()
+    {
+        echo ' m music';
+    }
+}
+$tv = new TV;
+$gmusic = new gMusic;
+$mmusic = new mMusic;
+
+$data=array($tv,$gmusic,$mmusic);
+foreach ($data as $key => $value) {
+   echo $value->makeVideo(). '<br>';
+}
