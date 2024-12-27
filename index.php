@@ -21,18 +21,57 @@
 
 // echo $a->display();
 
+// class Access
+// {
+//     public $name;
+//     protected $age;
+//     private $address;
 
-class Access
+//     public function hhhhh()
+//     {
+//         return 'this is private access';
+//     }
+// }
+
+// $info = new Access();
+// echo $info->hhhhh();
+
+
+class Person
 {
     public $name;
-    protected $age;
-    private $address;
+    public $age;
 
-    public function hhhhh()
+    public function __construct($name, $age)
     {
-        return 'this is private access';
+        $this->name = $name;
+        $this->age = $age;
+    }
+
+    public function display()
+    {
+        return $this->name . ' ' . $this->age;
     }
 }
 
-$info = new Access();
-echo $info->hhhhh();
+class Son extends Person
+{
+    public $address;
+    public function __construct($name, $age, $address)
+    {
+        $this->name = $name;
+        $this->age = $age;
+        $this->address = $address;
+    }
+
+    public function message()
+    {
+        return $this->name . ' ' . $this->age . ' ' . $this->address;
+    }
+}
+
+$info = new Person('Najmul', '20');
+echo $info->display();
+echo '<br>';
+$check = new Son('Najmul', '20', 'dhaka');
+echo $check->message();
