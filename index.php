@@ -36,42 +36,55 @@
 // $info = new Access();
 // echo $info->hhhhh();
 
+// class Person
+// {
+//     public $name;
+//     public $age;
+
+//     public function __construct($name, $age)
+//     {
+//         $this->name = $name;
+//         $this->age = $age;
+//     }
+
+//     public function display()
+//     {
+//         return $this->name . ' ' . $this->age;
+//     }
+// }
+
+// class Son extends Person
+// {
+//     public $address;
+//     public function __construct($name, $age, $address)
+//     {
+//         $this->name = $name;
+//         $this->age = $age;
+//         $this->address = $address;
+//     }
+
+//     public function message()
+//     {
+//         return $this->name . ' ' . $this->age . ' ' . $this->address;
+//     }
+// }
+
+// $info = new Person('Najmul', '20');
+// echo $info->display();
+// echo '<br>';
+// $check = new Son('Najmul', '20', 'dhaka');
+// echo $check->message();
+
 
 class Person
 {
-    public $name;
-    public $age;
+    const NAME = "rahim mia";
 
-    public function __construct($name, $age)
+    function check()
     {
-        $this->name = $name;
-        $this->age = $age;
-    }
-
-    public function display()
-    {
-        return $this->name . ' ' . $this->age;
+        return self::NAME;
     }
 }
 
-class Son extends Person
-{
-    public $address;
-    public function __construct($name, $age, $address)
-    {
-        $this->name = $name;
-        $this->age = $age;
-        $this->address = $address;
-    }
-
-    public function message()
-    {
-        return $this->name . ' ' . $this->age . ' ' . $this->address;
-    }
-}
-
-$info = new Person('Najmul', '20');
-echo $info->display();
-echo '<br>';
-$check = new Son('Najmul', '20', 'dhaka');
-echo $check->message();
+$test = new Person;
+echo $test->check();
